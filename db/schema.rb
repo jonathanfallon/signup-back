@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180525103419) do
+ActiveRecord::Schema.define(version: 20180627123501) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,10 +19,10 @@ ActiveRecord::Schema.define(version: 20180525103419) do
     t.string "attachment"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "enrollment_id"
     t.string "type"
     t.boolean "archive", default: false
-    t.integer "dgfip_id"
+    t.string "attachable_type"
+    t.integer "attachable_id"
   end
 
   create_table "enrollments", force: :cascade do |t|
@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20180525103419) do
     t.boolean "scope_dgfip_RFR"
     t.boolean "scope_dgfip_adresse_fiscale_taxation"
     t.integer "nombre_demandes_annuelle"
-    t.integer "pic_demandes_par_heure"
+    t.integer "pic_demandes_par_seconde"
     t.integer "nombre_demandes_mensuelles_jan"
     t.integer "nombre_demandes_mensuelles_fev"
     t.integer "nombre_demandes_mensuelles_mar"
